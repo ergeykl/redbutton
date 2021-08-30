@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Команда запуска ссылки на приложение "setxkbmap us; setxkbmap us,ru; pkexec ~/Redbutton/redbutton"
+
+# Меняем код из 1 и 2 слота ключа Yubikey на рандомное значение
+echo "y" | ykpersonalize -1 -ochal-resp -ochal-hmac -ohmac-lt64 -oserial-api-visible && echo "Значение Первого слота CR заменено";
+echo "y" | ykpersonalize -2 -ochal-resp -ochal-hmac -ohmac-lt64 -oserial-api-visible && echo "Значение Второго слота CR заменено";
+
+
+
+# Вычищаем luks заголовок системного диска без подтверждения паролем
+sudo cryptsetup luksErase -q /dev/ВАШ ДИСК && echo "luks заголовок Системного диска вычищен успешно";
+
+
+
+# Удаляем файлы без возможности их восстановления
+# Браузерные данные
+#sudo -S shred -zvu -n 35 "~/.cache/vivaldi/"
+# Резервные копии Timeshift
+#sudo -S shred -zvu -n 35 "/run/timeshift/backup/"
+
+# Ещё какие-то файлы
+#sudo -S shred -zvu -n 35 "~/file"
+# Стираем все логи системы !!!ВНИМАНИЕ ОПАСНО!!!
+#sudo -S shred -zvu -n 35 "/var/log"
+
+
+
+# Очищаем буфер обмена по среднему клику
+export DISPLAY=:0 && printf '' | xclip && echo "Буфер обмена (по средней кнопке) вычищен успешно";
+# Очищаем буфер обмена по нажатию на CTRL + V
+export DISPLAY=:0 && printf '' | xclip -selection clipboard && echo "Буфер обмена (обычный) вычищен успешно";
+
+# Очищаем оперативную память
+sudo sdmem && echo "Оперативная память очищена успешно";
+
+# Выключаем компьютер
+sudo shutdown now
