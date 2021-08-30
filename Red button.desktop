@@ -1,0 +1,19 @@
+[Desktop Entry]
+Comment[ru_RU]=
+Comment=
+Exec=setxkbmap us; setxkbmap us,ru; pkexec ~/Redbutton/redbutton
+GenericName[ru_RU]=Red button
+GenericName=Red button
+Icon=/home/ergeykl/usbdeath/Redbutton/logo/logo.png
+MimeType=
+Name[ru_RU]=Red button
+Name=Red button
+Path=
+StartupNotify=true
+Terminal=true
+TerminalOptions=\s--noclose
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=none
+X-KDE-SubstituteUID=false
+X-KDE-Username=
