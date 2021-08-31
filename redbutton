@@ -15,7 +15,8 @@ echo "y" | ykpersonalize -2 -ochal-resp -ochal-hmac -ohmac-lt64 -oserial-api-vis
 
 
 # Вычищаем luks заголовок системного диска без подтверждения паролем
-sudo cryptsetup luksErase -q /dev/ВАШ ДИСК && echo "luks заголовок Системного диска вычищен успешно";
+sudo cryptsetup luksErase -q /dev/НАЗВАНИЕ РАЗДЕЛА && echo "luks заголовок Системного диска вычищен успешно";
+sudo cryptsetup luksErase -q /dev/НАЗВАНИЕ РАЗДЕЛА2 && echo "luks заголовок Второго диска вычищен успешно";
 
 
 # Удаляем файлы командой 'shred' (восстановить невозможно)
