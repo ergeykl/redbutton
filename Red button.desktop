@@ -1,7 +1,7 @@
 [Desktop Entry]
 Comment[ru_RU]=
 Comment=
-Exec=setxkbmap us; setxkbmap us,ru; pkexec ~/Redbutton/redbutton
+Exec=setxkbmap us; pkexec ~/Redbutton/redbutton; setxkbmap us,ru
 GenericName[ru_RU]=Red button
 GenericName=Red button
 Icon=/Redbutton/logo/logo.png
