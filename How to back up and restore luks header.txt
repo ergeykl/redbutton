@@ -1,0 +1,67 @@
+*****Русская версия*****
+
+КАК СОЗДАТЬ КОПИЮ LUKS ЗАГОЛОВКА
+
+Чтобы узнать название нашего luks раздела нужно прописать в терминале
+lsblk
+И под названием зашифрованного раздела будет похожая строка
+luks-c0873-bebe-4600-6101-a7a217
+
+Делаем резервную копию luks заголовка командой
+sudo cryptsetup luksHeaderBackup /dev/НАЗВАНИЕ РАЗДЕЛА --header-backup-file НАЗВАНИЕ РАЗДЕЛА.back
+В домашней директории появится файл "НАЗВАНИЕ РАЗДЕЛА.back" это и есть наш бэкап
+
+Если бэкап нужно переместить в другую директорию то это можно сделать командой
+sudo cp /home/user/НАЗВАНИЕ РАЗДЕЛА.back /media/disk/backup/
+Зашифруйте ваш бэкап или скопируйте его в зашифрованный контейнер.
+
+
+КАК ВОССТАНОВИТЬ LUKS ЗАГОЛОВОК
+
+Если вы запустили скрипт, у вас есть бэкап и потом вы перезагрузились, то для восстановления нужно загрузиться с Live флешки.
+
+Если вы запустили скрипт, у вас НЕТ бэкапа, то примите мои соболезнования.
+
+Если вы запустили скрипт, у вас есть бэкап, но вы НЕ перезагрузились, то выполните следующие действия:
+
+Для восстановления luks заголовка прописываем эту команду
+sudo cryptsetup luksHeaderRestore /dev/НАЗВАНИЕ РАЗДЕЛА --header-backup-file НАЗВАНИЕ РАЗДЕЛА.back
+Прописываем БОЛЬШИМИ БУКВАМИ "YES"
+
+Убеждаемся что заголовок восстановлен командой
+sudo cryptsetup luksDump /dev/НАЗВАНИЕ РАЗДЕЛА | grep -i key
+
+
+
+*****English version*****
+
+HOW TO CREATE A COPY OF THE LUKS HEADER
+
+To find out the name of our luks partition you need to type
+lsblk
+Under the name of the encrypted partition there will be a similar string
+luks-c0873-bebe-4600-6101-a7a217
+
+Back up the luks header with
+sudo cryptsetup luksHeaderBackup /dev/SECTION NAME --header-backup-file SECTION NAME.back
+A file "SECTION NAME.back" will appear in our home directory and that is our backup
+
+If you want to move it to another directory, you can do it with the command
+sudo cp /home/user/SECTION NAME.back /media/disk/backup/
+Encrypt your backup or copy it to an encrypted container.
+
+
+HOW TO RESTORE THE LUKS HEADER
+
+If you ran the script, have a backup and then rebooted, you need to boot from a Live flash drive to recover.
+
+If you ran the script, you have NO backup, then my condolences.
+
+If you ran the script, you have a backup, but you did NOT reboot, then follow these steps:
+
+To restore the luks header, type this command
+sudo cryptsetup luksHeaderRestore /dev/SECTION NAME --header-backup-file SECTION NAME.back
+Type "YES" in big letters.
+
+Make sure that the header is restored with
+sudo cryptsetup luksDump /dev/ SECTION NAME | grep -i key
