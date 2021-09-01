@@ -20,7 +20,7 @@
 <br><b>EN:</b> Copy the files to the directory /home/user/Redbutton, go to the folder with the script, open a terminal in this folder, type the command (without quotes) "sudo chmod +x redbutton" and enter the root password, then copy the shortcut "Red button.desktop" to the desktop and, if necessary, in the parameters of the shortcut change the path to the script and launch parameters.
 In the parameters of the shortcut there is a command that changes the keyboard layout to US, this is done so you can enter the root password to run the script without thinking about the current layout.</br>
 
-# Тестирование/Tests
+# Тестирование/Testsing
 <b>RU:</b> Скрипт тестировался на Manjaro Linux с окружением KDE. На дистрибутивах основанных на Debian также должно работать корректно.
 Для работы скрипта может потребоваться установка дополнительных пакетов (xclip и sdmem).
 <br><b>EN:</b> The script was tested on Manjaro Linux with KDE environment. On distributions based on Debian should also work correctly.
