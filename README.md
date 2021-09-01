@@ -23,8 +23,9 @@ In the parameters of the shortcut there is a command that changes the keyboard l
 # Тестирование/Testsing
 <b>RU:</b> Скрипт тестировался на Manjaro Linux с окружением KDE. На дистрибутивах основанных на Debian также должно работать корректно.
 Для работы скрипта может потребоваться установка дополнительных пакетов (xclip и sdmem).
-<br><b>EN:</b> The script was tested on Manjaro Linux with KDE environment. On distributions based on Debian should also work correctly.
+<br><b>EN:</b> The script was tested on Manjaro Linux with KDE environment. It should work properly on distributions based on Debian.
 You may need to install additional packages (xclip and sdmem) to make the script work.</br>
+<code>sudo apt-get install -y xclip</code>
 
 # ВАЖНО/Attention
 <b>RU:</b> Не запускайте скрипт если у вас нет резервных копий luks заголовков и кодов Challenge response. Лучше всего тестировать скрипт на виртуальной машине. Перед тестированием скрипта на основной системе подумайте трижды о том, как вы будете всё восстанавливать.
