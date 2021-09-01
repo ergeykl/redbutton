@@ -1,10 +1,9 @@
 # redbutton
-RU: Простой скрипт на случай если вам нужно срочно сделать ваши luks зашифрованные диски и ключ Yubikey бесполезными.
-
-EN: It's a simple script in case you need to urgently make your luks encrypted disks and Yubikey key useless.
+RU: Простой скрипт на случай если вам нужно срочно сделать ваши luks зашифрованные диски бесполезными и изменить значения в слотах Challenge responce ключа Yubikey.
+EN: It's a simple script in case you need to urgently make your luks encrypted disks useless and change the values in the Challenge responce slots of the Yubikey.
 
 # Назначение/Purpose
-RU: Данный скрипт предназначен для людей для которых недостаточно иметь luks зашифрованные разделы для того чтобы чувствовать что информация в безопасности.
+RU: Данный скрипт предназначен для людей для которых недостаточно иметь luks зашифрованные разделы для того чтобы чувствовать что информация в безопасности. 
 
 EN: This script is designed for people for whom it is not enough to have luks encrypted partitions to feel that the information is safe.
 
